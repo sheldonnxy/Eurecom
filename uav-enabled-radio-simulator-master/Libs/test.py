@@ -36,3 +36,6 @@ city = CityModel(urban_config=urban_config
 plot_city_3d_map(city) # plot the 3D model of the city
 plot_city_top_view(city, fig_id=1) # plot the top view map of the city
 plot_show() # this function should be used at the end of the code
+
+
+#more details about the city configuration can be found in the CityConfigurator.py file
