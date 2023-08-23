@@ -1,6 +1,7 @@
 from PytorchModel.CityModel import *
 
 #TD: generate a dataset of 3D city models
+#how large is the dataset?
 
 
 from Utils.Plots import *
