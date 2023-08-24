@@ -1,5 +1,5 @@
 import numpy as np
-from ..Utils.utils import *
+from Utils.utils import *
 from numpy import save
 from numpy import load
 from .CityDefines import *
