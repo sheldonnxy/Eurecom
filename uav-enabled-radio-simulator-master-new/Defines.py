@@ -1,10 +1,8 @@
-import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt 
 import numpy as np
 from numpy import save
 from Libs.CitySimulator.CityConfigurator import *
 from Libs.ChannelModel.SegmentedChannelModel import *
-from Libs.Environments.DataCollection import *
-from Libs.Environments.IoTDevice import IoTDevice
 
 # City topology
 urban_config = CityConfigStr()
@@ -25,22 +23,27 @@ urban_config.bld_size_avg = 80
 urban_config.bld_size_min = 50
 urban_config.bld_dense = 0.001  # The density of the building in each block
 
-city = CityConfigurator(gen_new_map=False, save_map=False, urban_config=urban_config,
-                        city_file_name='Data/CityMap/city_map.npy')
+
 
 # Radio Channel parameters
 ch_param = ChannelParamStr()
 ch_param.los_exp = -2.5
 ch_param.los_bias_db = -30
-ch_param.los_var_db = np.sqrt(2)
-ch_param.nlos_exp = -3.04
-ch_param.nlos_bias_db = -35
-ch_param.nlos_var_db = np.sqrt(5)
+ch_param.los_var_db = np.sqrt(1)
+
+ch_param.nlos_exp = -2.5
+ch_param.nlos_bias_db = -30
+ch_param.nlos_var_db = np.sqrt(1)
+
+# ch_param.nlos_exp = -3.04
+# ch_param.nlos_bias_db = -35
+# ch_param.nlos_var_db = np.sqrt(5)
+
 ch_param.p_tx_db = 43
 ch_param.noise_level_db = -60
 ch_param.band_width = 100
 
-radio_ch_model = SegmentedChannelModel(ch_param)
+
 
 uav_height = 60
 bs_height = 30

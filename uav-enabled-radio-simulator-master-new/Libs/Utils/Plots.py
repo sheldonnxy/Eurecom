@@ -79,22 +79,23 @@ def plot_city_top_view(city, fig_id):
     return ax
 
 def plot_radio_map(radio_map, resolution=1, cb_title=None, fig_id=None):
+
     if fig_id is None:
         fig = plt.figure()
     else:
         fig = plt.figure(fig_id)
 
-    c_r_map = radio_map.T
+    c_r_map = radio_map.T # transpose the radio map
     for x_idx, x in enumerate(radio_map):
         for y_idx, y in enumerate(x):
             c_r_map[y_idx, x_idx] = y
     c = plt.pcolor(c_r_map, cmap=cm.get_cmap('jet'))
-    x_locs, x_lables = plt.xticks()
+    x_locs, x_labels = plt.xticks()
     new_x_locs = x_locs
     new_x_labels = ['{:.0f}'.format(a * resolution) for a in new_x_locs]
     plt.xticks(new_x_locs, new_x_labels)
 
-    y_locs, y_lables = plt.yticks()
+    y_locs, y_labels = plt.yticks()
     new_y_locs = y_locs
     new_y_labels = ['{:.0f}'.format(a * resolution) for a in new_y_locs]
     plt.yticks(new_y_locs, new_y_labels)
