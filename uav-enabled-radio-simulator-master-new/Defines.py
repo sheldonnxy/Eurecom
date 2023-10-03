@@ -31,20 +31,20 @@ ch_param.los_exp = -2.5
 ch_param.los_bias_db = -30
 ch_param.los_var_db = np.sqrt(1)
 
-ch_param.nlos_exp = -2.5
-ch_param.nlos_bias_db = -30
-ch_param.nlos_var_db = np.sqrt(1)
+# ch_param.nlos_exp = -2.5
+# ch_param.nlos_bias_db = -30
+# ch_param.nlos_var_db = np.sqrt(1)
 
-# ch_param.nlos_exp = -3.04
-# ch_param.nlos_bias_db = -35
-# ch_param.nlos_var_db = np.sqrt(5)
+ch_param.nlos_exp = -3.04
+ch_param.nlos_bias_db = -35
+ch_param.nlos_var_db = np.sqrt(5)
 
 ch_param.p_tx_db = 43
 ch_param.noise_level_db = -60
 ch_param.band_width = 100
 
 
-
+# UAV parameters
 uav_height = 60
 bs_height = 30
 
@@ -58,26 +58,26 @@ ColorMap = ["brown", "orange", "green", "red", "purple", "blue", "pink", "gray",
 #     [[520, 460, 0]]])
 
 # commu3
-device_position = np.array([
-    [[60, 320, 0]],
-    [[60, 720, 0]],
-    [[180, 200, 0]],
-    [[240, 460, 0]],
-    [[320, 120, 0]],
-    [[320, 560, 0]],
-    [[320, 760, 0]],
-    [[520, 200, 0]],
-    [[440, 460, 0]],
-    [[460, 720, 0]]])
-# datas = np.array([13000, 13000, 13000, 5000, 13000, 13000, 13000, 13000, 16000])
-uav_start_pose = np.array([
-    [[60, 120, 65]],
-    [[60, 120, 60]],
-    [[60, 120, 55]]])
-uav_terminal_pose = np.array([
-    [[560, 720, 65]],
-    [[560, 720, 60]],
-    [[560, 720, 55]]])
+# device_position = np.array([
+#     [[60, 320, 0]],
+#     [[60, 720, 0]],
+#     [[180, 200, 0]],
+#     [[240, 460, 0]],
+#     [[320, 120, 0]],
+#     [[320, 560, 0]],
+#     [[320, 760, 0]],
+#     [[520, 200, 0]],
+#     [[440, 460, 0]],
+#     [[460, 720, 0]]])
+# # datas = np.array([13000, 13000, 13000, 5000, 13000, 13000, 13000, 13000, 16000])
+# uav_start_pose = np.array([
+#     [[60, 120, 65]],
+#     [[60, 120, 60]],
+#     [[60, 120, 55]]])
+# uav_terminal_pose = np.array([
+#     [[560, 720, 65]],
+#     [[560, 720, 60]],
+#     [[560, 720, 55]]])
 # uav_battery_budget = np.array([60.0, 60.0])
 # device_position = np.array([
 #     [[20, 200, 0]],
@@ -90,10 +90,10 @@ uav_terminal_pose = np.array([
 #     [[460, 720, 0]],
 #     [[460, 200, 0]],
 #     [[580, 520, 0]]
-# ])
-known_user_idx = np.array([1, 3, 7])
-unknown_user_idx = np.array([0, 2, 4, 5, 6, 8, 9])
-datas = np.array([16000, 16000, 16000, 16000, 16000, 16000, 16000, 16000, 16000, 16000])
+# # ])
+# known_user_idx = np.array([1, 3, 7])
+# unknown_user_idx = np.array([0, 2, 4, 5, 6, 8, 9])
+# datas = np.array([16000, 16000, 16000, 16000, 16000, 16000, 16000, 16000, 16000, 16000])
 
 # uav_start_pose = np.array([
 #     [[320, 460, 55]],
@@ -102,8 +102,8 @@ datas = np.array([16000, 16000, 16000, 16000, 16000, 16000, 16000, 16000, 16000,
 # uav_terminal_pose = np.array([
 #     [[320, 460, 55]],
 #     [[320, 460, 60]],
-#     [[320, 460, 65]]])
-uav_battery_budget = np.array([75.0, 75.0, 75.0])
+# #     [[320, 460, 65]]])
+# uav_battery_budget = np.array([75.0, 75.0, 75.0])
 
 # uav_start_pose = np.array([
 #     [[300, 440, 60]],
@@ -130,8 +130,8 @@ uav_battery_budget = np.array([75.0, 75.0, 75.0])
 # uav_height = [55, 57, 59, 61, 63, 65]
 # uav_battery_budget = np.array([60.0])
 
-colors = ColorMap[:len(datas)]
-devices_params = {'position': device_position, 'color': colors, 'data': datas, 'user_num': len(device_position),
-                  'known_user_idx': known_user_idx, 'unknown_user_idx': unknown_user_idx}
-agent_params = {'start_pose': uav_start_pose, 'end_pose': uav_terminal_pose,
-                'battery_budget': uav_battery_budget}
+# colors = ColorMap[:len(datas)]
+# devices_params = {'position': device_position, 'color': colors, 'data': datas, 'user_num': len(device_position),
+#                   'known_user_idx': known_user_idx, 'unknown_user_idx': unknown_user_idx}
+# agent_params = {'start_pose': uav_start_pose, 'end_pose': uav_terminal_pose,
+#                 'battery_budget': uav_battery_budget}
