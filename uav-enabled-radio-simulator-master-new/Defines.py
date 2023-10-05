@@ -44,11 +44,26 @@ ch_param.noise_level_db = -60
 ch_param.band_width = 100
 
 
+
 # UAV parameters
 uav_height = 60
 bs_height = 30
 
 ColorMap = ["brown", "orange", "green", "red", "purple", "blue", "pink", "gray", "olive", "cyan", "black"]
+
+
+# uav_battery_budget = np.array([60.0])
+
+# colors = ColorMap[:len(datas)]
+# devices_params = {'position': device_position, 'color': colors, 'data': datas, 'user_num': len(device_position),
+#                   'known_user_idx': known_user_idx, 'unknown_user_idx': unknown_user_idx}
+# agent_params = {'start_pose': uav_start_pose, 'end_pose': uav_terminal_pose,
+#                 'battery_budget': uav_battery_budget}
+
+
+
+
+
 
 # Landmark positions
 # commu1
@@ -128,10 +143,4 @@ ColorMap = ["brown", "orange", "green", "red", "purple", "blue", "pink", "gray",
 #     [[340, 480, 60]]
 # ])
 # uav_height = [55, 57, 59, 61, 63, 65]
-# uav_battery_budget = np.array([60.0])
 
-# colors = ColorMap[:len(datas)]
-# devices_params = {'position': device_position, 'color': colors, 'data': datas, 'user_num': len(device_position),
-#                   'known_user_idx': known_user_idx, 'unknown_user_idx': unknown_user_idx}
-# agent_params = {'start_pose': uav_start_pose, 'end_pose': uav_terminal_pose,
-#                 'battery_budget': uav_battery_budget}

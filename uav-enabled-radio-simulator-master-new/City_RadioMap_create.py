@@ -67,7 +67,6 @@ plot_radio_map(radio_map.ch_gain_db[0], fig_id=2, resolution=10)
 
 
 # Generate a 0-1 mask around measurment
-mask = np.zeros((collected_meas.shape[0], 1))
 
 
 # Concatenate the measurement and mask
