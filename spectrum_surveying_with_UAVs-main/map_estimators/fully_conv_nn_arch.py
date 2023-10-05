@@ -1,5 +1,3 @@
-#TD: change tensorflow to pytorch
-
 import tensorflow as tf
 from tensorflow.keras.layers import Dense, Flatten, Conv2D, Input, \
     Conv2DTranspose, Reshape, MaxPool2D, UpSampling2D, BatchNormalization, add, \
@@ -14,6 +12,9 @@ import pickle
 import keras.backend as K
 from measurement_generation.measurement_dataset import GridMeasurementDataset
 tf.config.run_functions_eagerly(True)
+
+
+
 class FullyConvolutionalNeuralNetwork(Model):
     """Convolutional Neural Network class to get the posterior
     Gaussian distribution of the predicted power map."""

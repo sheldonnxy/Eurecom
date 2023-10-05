@@ -2,11 +2,11 @@ import numpy as np
 import matplotlib.pyplot as plt
 from Libs.CitySimulator.CityConfigurator import *
 from Libs.CitySimulator.CityDefines import *
-from Libs.Utils.Plots import *
-from Libs.Utils.utils import *
 from Libs.ChannelModel.SegmentedChannelModel import *
 from Libs.ChannelModel.RadioChannelBase import *
 from Libs.ChannelModel.ChannelDefines import *
+from Libs.Utils.Plots import *
+from Libs.Utils.utils import *
 from Defines import *
 
 
@@ -51,9 +51,6 @@ collected_meas = radio_ch_model.get_measurement_from_users(city=city_model, q_po
 # Save the collected measurement
 np.save('Data/Measurement/collected_meas.npy', collected_meas)
 
-# Load the collected measurement
-collected_meas = np.load('Data/Measurement/collected_meas.npy', allow_pickle=True)
-
 # 3D city map plot
 plot_city_3d_map(city_model) # plot the 3D model of the city
 plot_city_top_view(city_model, fig_id=1) # plot the top view map of the city
@@ -69,43 +66,8 @@ plot_radio_map(radio_map.ch_gain_db[0], fig_id=2, resolution=10)
 
 
 
-# Generate 100 random radio maps, each radio map has one UAV trajectory and 5 user positions
-num_radio_maps = 100
-
-# Generate UAV trajectories
-uav_trajectories = []
-
-for i in range(num_radio_maps):
-    uav_trajectory_corners = np.array([
-    [100, 100, 60],
-    [450, 300, 60],
-    [150, 400, 60],
-    [500, 500, 60],])
-
-    uav_simple_trajectory = generate_uav_trajectory_from_points(uav_trajectory_corners,
-    sampling_resolution= 40)
-    uav_trajectories.append(uav_simple_trajectory)
-
-# Generate user positions
-user_poses_auto = []
-
-for i in range(num_radio_maps):
-    user_poses_auto.append(city_model.user_scattering(num_user=5, user_altitude=0))
-
-
-
-
-# Save the radio maps
-for i in range(num_radio_maps):
-    radio_map = radio_ch_model.get_radio_map(city=city_model, q_height=60, ue_poses=user_poses_auto, resolution=10)
-    np.save('Data/RadioMap/radio_map_'+str(i)+'.npy', radio_map)
-
-
-
-
-
-# # Generate a 0-1 mask around measurment
-# mask = np.zeros((collected_meas.shape[0], 1))
+# Generate a 0-1 mask around measurment
+mask = np.zeros((collected_meas.shape[0], 1))
 
 
 # Concatenate the measurement and mask
