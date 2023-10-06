@@ -31,13 +31,13 @@ ch_param.los_exp = -2.5
 ch_param.los_bias_db = -30
 ch_param.los_var_db = np.sqrt(1)
 
-# ch_param.nlos_exp = -2.5
-# ch_param.nlos_bias_db = -30
-# ch_param.nlos_var_db = np.sqrt(1)
+ch_param.nlos_exp = -2.5
+ch_param.nlos_bias_db = -30
+ch_param.nlos_var_db = np.sqrt(1)
 
-ch_param.nlos_exp = -3.04
-ch_param.nlos_bias_db = -35
-ch_param.nlos_var_db = np.sqrt(5)
+# ch_param.nlos_exp = -3.04
+# ch_param.nlos_bias_db = -35
+# ch_param.nlos_var_db = np.sqrt(5)
 
 ch_param.p_tx_db = 43
 ch_param.noise_level_db = -60

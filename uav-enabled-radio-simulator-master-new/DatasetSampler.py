@@ -67,24 +67,13 @@ for i in range(num_radio_maps):
 
 
 
+
 #plot the city map
 plot_city_3d_map(city_model) # plot the 3D model of the city
 plot_city_top_view(city_model, fig_id=1) # plot the top view map of the city
 plot_city_top_view(city_model, fig_id=2) # plot the top view map of the city
 
-# plot the first and second user positions
-plot_user_positions(user_poses[0], fig_id=1, marker='*', marker_size=130, color='b')
-plot_user_positions(user_poses[1], fig_id=2, marker='*', marker_size=130, color='b')
-
-# plot the first and second UAV trajectory
-plot_uav_trajectory(uav_simple_trajectory[0], fig_id=1, marker='o', line_width=3.5, color='m', marker_size=8)
-plot_uav_trajectory(uav_simple_trajectory[1], fig_id=2, marker='o', line_width=3.5, color='m', marker_size=8)
-
 # Plot the first and second radio map
-radio_map = radio_ch_model.get_radio_map(city=city_model, q_height=60, ue_poses=user_poses[0], resolution=10)
-plot_radio_map(radio_map.ch_gain_db[0], fig_id=3, resolution=10)
-radio_map = radio_ch_model.get_radio_map(city=city_model, q_height=60, ue_poses=user_poses[1], resolution=10)
-plot_radio_map(radio_map.ch_gain_db[0], fig_id=4, resolution=10)
 
 
 
@@ -92,6 +81,7 @@ plot_radio_map(radio_map.ch_gain_db[0], fig_id=4, resolution=10)
 
 
 # Print the mask for the first and second measurement
+
 
 
 # this function should be used at the end of the code

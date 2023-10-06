@@ -29,9 +29,6 @@ user_poses_auto = city_model.user_scattering(num_user=5, user_altitude=0)
 # [550, 450, 0],
 # ]) 
 
-# Generate the radio map
-radio_map = radio_ch_model.get_radio_map(city=city_model, q_height=60, ue_poses=user_poses_auto, resolution=10)
-
 #UAV trajectory ( manually or automatically )
 uav_trajectory_corners = np.array([
 [100, 100, 60],
@@ -42,14 +39,18 @@ uav_trajectory_corners = np.array([
 uav_simple_trajectory = generate_uav_trajectory_from_points(uav_trajectory_corners,
 sampling_resolution= 40)
 
-#Link status
+# Collect measurements
+measurements = radio_ch_model.get_measurement_from_users(city=city_model, q_poses=uav_simple_trajectory, user_poses=user_poses_auto, sampling_resolution=10)
+
+# Generate radio map
+radio_map = radio_ch_model.get_radio_map(city=city_model, q_height=60, ue_poses=user_poses_auto, resolution=10)
+
+
+# Link status
 link_status = city_model.link_status_to_user(q_poses=uav_simple_trajectory, user_poses=user_poses_auto)
 
-# Collect the measurement
-collected_meas = radio_ch_model.get_measurement_from_users(city=city_model, q_poses=uav_simple_trajectory, user_poses=user_poses_auto)
-
-# Save the collected measurement
-np.save('Data/Measurement/collected_meas.npy', collected_meas)
+# Print link status
+print(link_status)
 
 # 3D city map plot
 plot_city_3d_map(city_model) # plot the 3D model of the city
@@ -61,18 +62,27 @@ plot_user_positions(user_poses_auto, fig_id=1, marker='*', marker_size=130, colo
 # UAV trajectory plot
 plot_uav_trajectory(uav_simple_trajectory, fig_id=1, marker='o', line_width=3.5, color='m', marker_size=8) 
 
+
+# Measurement plot
+plot_rssi_measurements(measurements, fig_id=2, marker='o', color='m')
+
 # Radio map plot
-plot_radio_map(radio_map.ch_gain_db[0], fig_id=2, resolution=10)
+plot_radio_map(radio_map.ch_gain_db, fig_id=2, resolution=1)
 
 
 
-# Generate a 0-1 mask around measurment
+
+
+
+
+# Generate a 0-1 mask for grids around measurment place, the close grids are 1 and other grids are 0
 
 
 # Concatenate the measurement and mask
 
 
 # Save the masked collected measurement
+
 
 
 # this function should be used at the end of the code
