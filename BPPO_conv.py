@@ -4,7 +4,6 @@ Backtracking Proximal Policy Optimization (BPPO),
 
 Trajectory optimization for radio map estimation
 
-通过优化无人机轨迹，利用无人机在空间不同位置采集具有高信息量的RSS数据，以此来提高估计RM的准确性
 Using:
 tensorflow 1.14.0
 gym 0.8.0

@@ -2,8 +2,6 @@
 Reinforcement Learning:
 Proximal Policy Optimization (PPO),
 
-PPO算法
-
 
 """
 
