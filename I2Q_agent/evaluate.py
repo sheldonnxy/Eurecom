@@ -1,6 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
-from UNet import unet
+import torch
+from UNet import *
 unet_model = UNet()
 unet_model.load_state_dict(torch.load('unet_model.pth'))
 

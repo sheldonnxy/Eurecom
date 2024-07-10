@@ -134,16 +134,3 @@ class UNet(nn.Module):
 
         self.val_loss(val_loss.item())
 
-# Example usage
-if __name__ == "__main__":
-    # Create a sample input tensor
-    input_tensor = torch.randn(1, 2, 32, 32)  # Batch size 1, 2 input channels, 32x32 spatial dimensions
-
-    # Instantiate the UNet model
-    model = UNet(in_channels=2, out_channels=1)
-
-    # Forward pass
-    mu, sigma = model(input_tensor)
-
-    print(f"Output mu shape: {mu.shape}")
-    print(f"Output sigma shape: {sigma.shape}")

@@ -1,5 +1,5 @@
 import torch
-from unet import UNet
+import unet
 from data_processing import process_input, process_output
 
 def predict(model, masked_measurement, true_map, device):
